@@ -323,7 +323,7 @@ public class DijkstraTrainAlgorithmPQ {
             try {
                  connection = DatabaseManager.getInstance().getConnection(); //connect to the ROUTE database in DBeaver
                  rs_1 = connection.createStatement().executeQuery("SELECT DISTINCT source AS column " +
-                        "FROM  \"route\" UNION SELECT DISTINCT destination FROM \"route\" ");
+                        "FROM  \"*****\" UNION SELECT DISTINCT destination FROM \"*****\" ");
             }
             catch (SQLException throwables) {
                 throwables.printStackTrace();
@@ -335,7 +335,7 @@ public class DijkstraTrainAlgorithmPQ {
             Graph graphForLeftwardsTrains = new Graph(vertex_labels.size());
             try {
                  rs_2 = connection.createStatement().executeQuery("SELECT source, destination " +
-                        "FROM \"route\" ");
+                        "FROM \"*****\" ");
             }
             catch (SQLException throwables) {
                 throwables.printStackTrace();
@@ -354,8 +354,8 @@ public class DijkstraTrainAlgorithmPQ {
                             TRACK_DISTANCE);
             }
             try {
-                rs_3 = connection.createStatement().executeQuery("SELECT source, destination " + //connect to the ROUTE database in DBeaver
-                        "FROM \"route\" ");
+                rs_3 = connection.createStatement().executeQuery("SELECT source, destination " + //connect to the ***** database in DBeaver
+                        "FROM \"*****\" ");
             }
             catch (SQLException throwables) {
                 throwables.printStackTrace();
